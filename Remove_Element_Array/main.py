@@ -22,6 +22,8 @@ class Solution(object):
         if nums[i]==val:
             i=i-1
         return i+1
-        
+
+
+# Method Used = Two Pointer
 # leetcode link: https://leetcode.com/problems/remove-element/description/?envType=study-plan-v2&envId=top-interview-150
 # Time Complexity = O(n)
