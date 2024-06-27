@@ -6,9 +6,7 @@ Welcome to my LeetCode solutions repository! Here, you'll find my solutions to v
 
 - [Introduction](#introduction)
 - [Solutions](#solutions)
-- [Contributing](#contributing)
 - [Contact](#contact)
-- [License](#license)
 
 ## Introduction
 
@@ -24,5 +22,14 @@ The solutions are organized in folders based on the difficulty level of the prob
 
 Each folder contains subfolders for different topics, such as arrays, strings, dynamic programming, etc. The solutions are written in various programming languages, showcasing my proficiency in multiple languages and paradigms.
 
-### Example Structure
+## Contact
+
+If you have any questions, suggestions, or feedback, feel free to reach out to me:
+
+- **Email:** 26harshilpatel@gmail.com
+- **LinkedIn:** [Harshil Patel](https://www.linkedin.com/in/harshil-patel26/))
+
+---
+
+Happy coding!
 
