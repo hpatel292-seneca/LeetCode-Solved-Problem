@@ -1,0 +1,12 @@
+Fast and Slow pointer also called Tortoise and Hare also called Floyd's Cycle Detection.
+
+-> This technique is typically used for cycle detection in linked lists or arrays. One pointer moves twice as fast as the other, and if there's a cycle, they will eventually meet. It works every time and here is the explanation:
+
+For Example: Let's say the difference between fast pointer and slow pointer is 10.
+    => Total difference is = 10.
+Slow pointer moves by 1 going foward.
+    => Total difference is = 10+1
+Fast pointer moves by 2 going towards the slow pointer
+    => Total difference is = 10+1-2 = 9
+
+So eventually the difference will gets to 0 and fast and slow pointer meet.
