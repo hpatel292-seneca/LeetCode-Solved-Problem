@@ -5,25 +5,35 @@ class Solution(object):
         :type prerequisites: List[List[int]]
         :rtype: bool
         """
-        prereq_adj=[[] for _ in range(numCourses)]
+        if len(prerequisites)==0:
+            return True
+        self.prereq_adj=[[] for _ in range(numCourses)]
         for i in prerequisites:
-            prereq_adj[i[1]].append(i[0])
-
-        stack=[]
-        visited=set()
-        stack.append(0)
-        arr=[]
-        while stack:
-            curr=stack.pop()
-            visited.add(curr)
-            arr.append(curr)
-            for i in prereq_adj[curr]:
-                if i in visited:
-                    return False
-                elif i not in visited:
-                    stack.append(i)
+            self.prereq_adj[i[1]].append(i[0])
         
-        return numCourses==len(arr)
-    
+        self.visited=[False for _ in range(numCourses)]
+        self.rec_stack=[False for _ in range(numCourses)]
+        index=0
+        for node in self.prereq_adj:
+            if not self.visited[index]:
+                if self.is_cycle(index):
+                    return False
+            index+=1
+        return True
+
+    def is_cycle(self, v):
+        self.visited[v]=True
+        self.rec_stack[v]=True
+
+        for n in self.prereq_adj[v]:
+            if not self.visited[n]:
+                if self.is_cycle(n):
+                    return True
+            elif self.rec_stack[n]:
+                return True
+        
+        self.rec_stack[v]=False
+        return False
+
 sol=Solution()
-sol.canFinish(5, [[1,4],[2,4],[3,1],[3,2]])
+sol.canFinish(20, [[0,10],[3,18],[5,5],[6,11],[11,14],[13,1],[15,1],[17,4]])
