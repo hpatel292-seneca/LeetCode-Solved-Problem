@@ -20,6 +20,7 @@ def dfs_iterative(graph):
     visited=set()
     stack.append(0)
     arr=[]
+    min_height=0
     while stack:
         curr=stack.pop()
         visited.add(curr)
