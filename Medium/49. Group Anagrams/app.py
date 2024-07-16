@@ -8,7 +8,7 @@ class Solution(object):
         """
         group=defaultdict(list)
         for i in strs:
-            key=sorted(i)
+            key="".join(sorted(i))
             group[key].append(i)
         
         return group.values()
