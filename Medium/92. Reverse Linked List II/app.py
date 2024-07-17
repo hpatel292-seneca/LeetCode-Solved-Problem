@@ -14,30 +14,25 @@ class Solution(object):
         if not head or not head.next or left==right:
             return head
         dummyNode=ListNode(0, head)
-        dummy=dummyNode
-        arr_end=subArr_start=subArr_end=arr_start=None
+        curr=dummyNode
+        lp=None
         index=0
-        while dummy:
-            if index==left-1:
-                arr_end=dummy
-                subArr_start=dummy.next
-            if index==right:
-                arr_start=dummy.next
-                subArr_end=dummy
-            dummy=dummy.next
+        while index<(left-1):
+            curr=curr.next
             index+=1
-            
-        curr=subArr_start
-        prev=None
-        while curr!=arr_start:
+        lp=curr
+        curr=curr.next
+        prev=0
+        for _ in range(right-left+1):
             next_node=curr.next
             curr.next=prev
             prev=curr
             curr=next_node
-        arr_end.next=subArr_end
-        subArr_start.next=arr_start
+        temp=lp.next
+        lp.next=prev
+        temp.next=curr
 
-        return head
+        return dummyNode.next
 
     
 
