@@ -4,7 +4,7 @@ def bfs(graph, start, res=set()):
 
     while visited:
         start=visited[0]
-        visited.pop(0)
+        visited.pop()
         res.add(start)
 
         for i in graph[start]:
